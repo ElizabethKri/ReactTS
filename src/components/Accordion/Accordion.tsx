@@ -1,6 +1,6 @@
-type AccordionType = {
+export type AccordionType = {
     titleValue: string,
-    collapsed: boolean
+    collapsed?: boolean
 }
 
 export function Accordion(props: AccordionType) {
@@ -14,7 +14,7 @@ export function Accordion(props: AccordionType) {
     )
 }
 
-type AccordionTitleType = {
+export type AccordionTitleType = {
     title: string
 }
 
