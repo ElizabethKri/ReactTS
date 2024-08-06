@@ -3,6 +3,7 @@ import {useState} from 'react';
 
 
 
+
 export function UncontrolAcc(props: AccordionType) {
     console.log ('rendering Accordion')
 
@@ -14,8 +15,8 @@ export function UncontrolAcc(props: AccordionType) {
 
     return (
         <>
-            <AccordionTitle title={props.titleValue}/>
-            <button onClick={onClickHandler}>Toggle</button>
+            {/*<AccordionTitle title={props.titleValue} onClick = {onClickHandler}/>*/}
+            {/*<button onClick={onClickHandler}>Toggle</button>*/}
             {!collapsed && <AccordionBody/>}
         </>
     )
@@ -23,7 +24,7 @@ export function UncontrolAcc(props: AccordionType) {
 
 
 const AccordionTitle = (props: AccordionTitleType) => {
-    return <h3>---{props.title}---</h3>
+    return <h3 onClick={props.onClick}>---{props.title}---</h3>
 }
 
 const AccordionBody = () => {
