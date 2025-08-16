@@ -1,4 +1,4 @@
-import {Rating, RatingValueType} from './Rating';
+import {Rating, RatingValueType} from '../components/Rating/Rating';
 import {useState} from 'react';
 
 

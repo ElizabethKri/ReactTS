@@ -1,5 +1,5 @@
-import {Rating} from '../Rating/Rating';
-import {OnOff} from './onOff';
+import {Rating} from '../components/Rating/Rating';
+import {OnOff} from '../components/onnOff/onOff';
 import {useState} from 'react';
 import {action} from '@storybook/addon-actions';
 

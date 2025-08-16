@@ -1,28 +1,36 @@
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from './components/Rating/Rating';
-import OnOff from './components/onnOff/onOff';
-import {UncontrolAcc} from './components/Accordion/UncontrolAcc';
-import {UnControlRating} from './components/Rating/UnControlRating';
-import {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {UnControlledOnOff} from './components/onnOff/UnControlledOnOff';
+import {OnOff} from './components/onnOff/onOff';
+
+
 
 function App() {
 
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
   let [accordionCollapsed, setAccordionCollapsed] =useState<boolean>(true)
   let [switchOn, switchSetOn] =useState<boolean>(true)
+
+    const onClickHandler = useCallback(() => {}, [])
+
   return (
     <div className="App">
 
         {/*console.log("rendering App")*/}
 
-        <Rating value = {ratingValue} onClick = {setRatingValue}/>
-        <Accordion titleValue={"Menu"} collapsed={accordionCollapsed} onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
+        {/*<Rating value = {ratingValue} onClick = {setRatingValue}/>*/}
+
+        <Accordion titleValue={"Menu"}
+                   collapsed={accordionCollapsed}
+                   onChange={() => setAccordionCollapsed(!accordionCollapsed)}
+                   onClick={onClickHandler}
+                   items={[{title: 'Love', value: 1},{title: 'Like', value: 2} ]}/>
         {/*<UncontrolAcc titleValue={"Menu"}/>*/}
         {/*<UnControlRating/>*/}
-        <OnOff on ={switchOn} onChange={on => {switchSetOn(on)}}/>
-        <UnControlledOnOff onChangeOn = {switchSetOn}/> {switchOn.toString()}
+        {/*<OnOff on ={switchOn} onChange={ on => {switchSetOn(on)}}/>*/}
+        {/*<UnControlledOnOff onChangeOn = {switchSetOn}/> {switchOn.toString()}*/}
         {/*<OnOff on={false}/>*/}
 
 
